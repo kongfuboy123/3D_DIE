@@ -1,3 +1,22 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.scene {
+  @apply w-full h-full flex justify-center items-center bg-gray-600 ;
+  
+  perspective:1000px
+}
+.box {
+  @apply w-[200px] h-[200px] my-[300px] mx-auto  relative ;
+  transform-style:preserve-3d;
+  transform:rotateX(0deg) rotateY(0deg) rotateZ(0deg) ;
+}
+.surface {
+ @apply absolute left-0 top-0 w-full h-full p-[20px] box-border bg-gray-200 rounded-lg flex shadow-lg;
+ //transform-origin:center center 100px
+ 
+}
+.redDot {
+  @apply w-[50px] h-[50px] rounded-full bg-red-500 shadow-inner;
+}
