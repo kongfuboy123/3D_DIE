@@ -1,12 +1,12 @@
 import React from 'react'
 
-export default function Box() {
+export default function Die() {
  
   return (
     // 景深
-    <div className='scene' >  
+    <div id='box' className='scene' >  
     
-      <div className="box" style={{transform: 'rotateX(-15deg)rotateY(-30deg) rotateZ(0deg)'}}>
+      <div className="box animate-boxRotate hover:pause">
       
         <div className='surface  justify-center items-center animate-oneFly ' style={{transform: 'rotateY(0deg) translateZ(100px) '}}>
           <span className='redDot'> </span>

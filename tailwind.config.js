@@ -12,6 +12,9 @@ module.exports = {
         fourFly:'fourFly ease-in-out 2.4s',
         fiveFly:'fiveFly ease-in-out 2.4s',
         sixFly:'sixFly ease-in-out 2.4s',
+        boxRotate:'boxRotate  10s 2.4s linear infinite',// duration:10s delay:2.4s
+        picRotate:'picRotate  10s linear infinite',
+        ringRotate:'ringRotate  1s linear infinite',
       },
       keyframes:{
         oneFly:{
@@ -110,7 +113,7 @@ module.exports = {
             transform:'rotateY(-90deg) translateZ(300px)',
             opacity:0
           },
-          '75':{
+          '75%':{
             transform:'rotateY(-180deg) translateZ(300px)',
             opacity:1
           },
@@ -119,6 +122,31 @@ module.exports = {
           } ,           
           '100%':{transform:'rotateY(-180deg) translateZ(100px)'}
         },
+        boxRotate:{
+          '0%':{
+            transform:'rotateX(-20deg) rotateY(-20deg) rotateZ(0deg)'
+          },
+          '100%':{
+            transform:'rotateX(340deg) rotateY(340deg) rotateZ(360deg)'
+          }
+        },
+
+        picRotate:{
+          '0%' :{
+            transform: 'rotateY(0)'
+          },
+          '100%':{
+            transform: 'rotateY(-360deg)'
+          }
+        },
+        ringRotate:{
+          '0%' :{
+            transform: 'rotateZ(0)'
+          },
+          '100%':{
+            transform: 'rotateZ(360deg)'
+          }
+        }
       }
     },
   },

@@ -2,21 +2,41 @@
 @tailwind components;
 @tailwind utilities;
 
-.scene {
-  @apply w-full h-full flex justify-center items-center bg-gray-600 ;
+@layer utilities {
+  .pause {
+    animation-play-state: paused;
+  }
+  .scene {
+    @apply w-full h-[calc(100vh-80px)] flex justify-center items-center bg-gray-600 ;
+    
+    perspective:1000px
+  }
+  .box {
+    @apply w-[200px] h-[200px] my-[300px] mx-auto  relative ;
+    transform-style:preserve-3d;
+    transform:rotateX(-20deg) rotateY(-20deg) rotateZ(0deg) ;
+  }
+  .surface {
+   @apply absolute left-0 top-0 w-full h-full p-[20px] box-border bg-gray-200 rounded-lg flex shadow-lg;
+   //transform-origin:center center 100px
+   
+  }
+  .redDot {
+    @apply w-[50px] h-[50px] rounded-full bg-red-500 shadow-inner;
+  }
   
-  perspective:1000px
-}
-.box {
-  @apply w-[200px] h-[200px] my-[300px] mx-auto  relative ;
-  transform-style:preserve-3d;
-  transform:rotateX(0deg) rotateY(0deg) rotateZ(0deg) ;
-}
-.surface {
- @apply absolute left-0 top-0 w-full h-full p-[20px] box-border bg-gray-200 rounded-lg flex shadow-lg;
- //transform-origin:center center 100px
- 
-}
-.redDot {
-  @apply w-[50px] h-[50px] rounded-full bg-red-500 shadow-inner;
+  .pic {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    /* 设置元素的倒影效果 below 是倒影效果在元素下方 15px 是元素和倒影的距离 后面的属性和背景渐变色是一个属性 设置了一个从下到上由背景透明色过渡到设置了不透明度的白色 */
+    -webkit-box-reflect: below 15px -webkit-linear-gradient(transparent 10%, rgba(255, 255, 255, 0.3));
+  }
+  
+  .preserve-3d {
+    transform-style:preserve-3d;
+  }
 }
